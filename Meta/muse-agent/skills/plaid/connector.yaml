@@ -1,0 +1,14 @@
+id: plaid
+title: "Finances (Plaid)"
+description: "Read linked bank, card, loan and investment accounts through Plaid, including balances, transactions and spending, recurring bills and subscriptions, liabilities and holdings."
+aliases: [plaid]
+include_in_prompt: false
+availability:
+  confidential_vm: false
+auth:
+  authorize: "{bin} authorize-url"
+sync:
+  fetch_kind: connector_sync_plaid
+  cadence_minutes: 1450
+  read_methods: [accounts.read, transactions.read]
+  content_hints: [personal_finance]
